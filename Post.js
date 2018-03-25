@@ -90,7 +90,7 @@ export default class Post extends React.Component {
                   onScroll={this.onScroll}>
 
                     {/* This is our main title card */}
-                    <View style={[styles.card, styles.title]}>
+                    <View style={styles.card}>
                         <Image
                           style={styles.image}
                           width={CARD_WIDTH}
@@ -101,7 +101,7 @@ export default class Post extends React.Component {
                     </View>
 
                     {/* And this is our one and only comment */}
-                    <Animated.View style={[styles.card, styles.comment, this.verticallyAlignComment()]}>
+                    <Animated.View style={[styles.card, this.verticallyAlignComment()]}>
                         <Text style={styles.text}>{this.props.comment}</Text>
                     </Animated.View>
 
