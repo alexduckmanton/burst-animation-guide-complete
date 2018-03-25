@@ -56,9 +56,7 @@ export default class Post extends React.Component {
     }
 
     verticallyAlignComment = () => {
-        const INDEX = this.props.index;
-        const INLINE_POS = 0;
-        const ACTIVE_POS = -INDEX * (this.props.height + CARD_GUTTER_VERTICAL)
+        const ACTIVE_POSITION = -this.props.index * (this.props.height + CARD_GUTTER_VERTICAL)
 
         return {
             transform: [{
@@ -67,7 +65,7 @@ export default class Post extends React.Component {
                         0,
                         SCROLL_INTERVAL,
                     ],
-                    outputRange: [INLINE_POS, ACTIVE_POS],
+                    outputRange: [0, ACTIVE_POSITION],
                     extrapolate: 'clamp'
                 }),
             }],
