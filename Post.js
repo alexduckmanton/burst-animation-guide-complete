@@ -17,18 +17,12 @@ const CARD_WIDTH = DEVICE_WIDTH - 32;
 const SCROLL_INTERVAL = CARD_WIDTH + CARD_GUTTER_HORIZONTAL;
 
 export default class Post extends React.Component {
-    initializeScrollEvents = () => {
-        this.scrollValue = new Animated.Value(0);
-
-        this.onScroll = Animated.event(
-            [{ nativeEvent: { contentOffset: { x: this.scrollValue } } }],
-            { useNativeDriver: true }
-        );
-    }
-
-    componentWillMount = () => {
-        this.initializeScrollEvents();
-    }
+    
+    scrollValue = new Animated.Value(0)
+    onScroll = Animated.event(
+        [{ nativeEvent: { contentOffset: { x: this.scrollValue } } }],
+        { useNativeDriver: true }
+    )
 
     elevate = () => {
         return {
